@@ -174,6 +174,44 @@ values (1, 4, '1', '50.0');
 insert into item_venda (id_venda, id_produto, quantidade, preco_unitario)
 values (2, 1, '1', '120.0');
 
+#Tipos de selects
+select * from cliente;
+
+#retornar os 2 primeiros clientes
+select * from cliente limit 2;
+
+#retonar os 2 primeiros clientes pulando os dois primeiros
+select * from cliente limit 2 offset 2;
+
+#listar os produtos em ordem alfabetica
+select * from produto order by nome asc;
+select * from produto order by nome;
+select * from produto order by preco_unitario;
+
+#listar os 3 produtos mais baratos
+select * from produto order by preco_unitario limit 3;
+
+#listar os produtos em ordem alfabetica descendente
+select * from produto order by nome desc;
+
+#mostrar os serviços com preço acima de 100 reais
+select * from servico where preco_base > 100;
+
+#ver as bicicletas do ano de 2023
+select * from bicicleta where ano = 2023;
+select * from bicicleta where ano between 2022 and 2022;
+
+#ver as ordens de serviço que ainda não foram concluidas
+select * from ordem_servico where status != "Concluida";
+
+#buscar cliente pelo nome
+select * from cliente where nome like "%Maria%";
+
+#ver os produtos com menos de 10 unidades no estoque
+select * from produto where estoque <10;
+
+#mostrar as personalidades feitas após 15 de agosto de 2025
+
 DELETE FROM Produto
 WHERE id_produto = 5;
 SELECT * FROM item_venda;
